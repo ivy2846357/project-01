@@ -6,19 +6,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%- title %></title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="./assets/style/all.css">
 </head>
 
 <body>
   <header class="header">
-    這是 header
+    <!-- 最上層LINK -->
+    <div class="link-info bg-secondary py-1">
+      <div class="container d-flex justify-content-end">
+        <a href="#" class="text-warning mr-2">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="#" class="text-warning">
+          <i class="fab fa-twitter-square"></i></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- nav導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">六角西餐廳</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">首頁 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                美味菜單
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">蔬果口味</a>
+                <a class="dropdown-item" href="#">沒肉不舒服</a>
+                <a class="dropdown-item" href="#">調味醬</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a href="#" class="btn btn-outline-warning mr-2" data-toggle="modal" data-target="#loginModal">登入</a>
+            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#registerModal">註冊</a>
+          </form>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <%- contents %>
 
   <footer class="footer">
-    footer
+    <footer class="bg-light">
+      <div class="container py-3 d-flex justify-content-center align-items-center flex-column flex-md-row">
+        <p class="mr-4">© Copright 2017 六角學院</p>
+        <div class="link d-flex">
+          <p><a href="#" class="text-primary mr-2">Github</a></p>
+          <p><a href="#" class="text-primary mr-2">Facebook</a></p>
+          <p><a href="#" class="text-primary mr-2">About</a></p>
+        </div>
+      </div>
+    </footer>
   </footer>
+
+  <!-- loginModal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="exampleModalLabel">登入</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="請輸入電子信箱">
+              <small id="emailHelp" class="form-text text-muted">我們絕不會隨意將你的 email 給予第三者</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">密碼</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">記住密碼</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer ">
+          <a href="#" class="mr-auto" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">你還沒有帳號嗎？</a>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary">登入</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- registerModal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 900px;">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-white">
+          <h5 class="modal-title" id="exampleModalLabel">註冊服務</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>註冊六角西餐廳</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt error neque sint dicta
+                inventore quas consequuntur ducimus. Distinctio asperiores nisi a suscipit. Repellendus
+                sequi expedita fuga assumenda dolorem voluptatibus quia.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt error neque sint dicta
+                inventore quas consequuntur ducimus. Distinctio asperiores nisi a suscipit. Repellendus
+                sequi expedita fuga assumenda dolorem voluptatibus quia.</p>
+            </div>
+            <div class="col-sm-6">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="請輸入電子信箱">
+                  <small id="emailHelp" class="form-text text-muted">我們絕不會隨意將你的 email 給予第三者</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密碼</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">確認密碼</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">同意條款</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="mr-auto" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">你有帳號了？</a>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-warning">註冊</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
   <script src="./assets/js/vendors.js"></script>
   <script src="./assets/js/all.js"></script>
 </body>
